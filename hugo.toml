@@ -12,6 +12,8 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
+disablePathToLower = true
+
 [params]
 
     # Source Code repository section
@@ -85,7 +87,7 @@ enableMissingTranslationPlaceholders = false
 
     [[menu.main]]
         name = "關於作者"
-        url = "/ccc/"
+        url = "/_author/"
         weight = 99
         identifier = 'author'
         # pre = "<i class='fa fa-heart'></i>&nbsp;"
