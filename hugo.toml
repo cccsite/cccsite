@@ -18,8 +18,8 @@ disablePathToLower = true
 
     # Source Code repository section
     # description = "　　一人出版社"
-    github_repository = "https://github.com/thingsym/hugo-theme-techdoc"
-    version = "1.0.0"
+    github_repository = "https://github.com/cccsite/cccsite"
+    version = "1.0"
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
@@ -57,9 +57,10 @@ disablePathToLower = true
 
     # path name excluded from documentation menu
     menu_exclusion = [
-        "_author",
-        "_adult",
-        "_programmer",
+        "作者",
+        "雜誌",
+        "入口",
+        "書籍",
     ]
 
     # Algolia site search section
@@ -72,24 +73,37 @@ disablePathToLower = true
 # Global menu section
 # See https://gohugo.io/content-management/menus/
 [menu]
-    [[menu.main]]
-        name = "首頁"
-        url = "/"
-        weight = 1
-        identifier = 'home'
-        # pre = "<i class='fa fa-heart'></i>&nbsp;"
 
     [[menu.main]]
         name = "雜誌"
-        url = "/mag"
-        weight = 2
+        url = "/雜誌"
+        weight = 1
         identifier = '雜誌'
+        # pre = "<i class='fa fa-heart'></i>&nbsp;"
+
+    [[menu.main]]
+        name = "書籍"
+        url = "/書籍"
+        weight = 3
+        identifier = '書籍'
+
+    [[menu.main]]
+        name = "程式"
+        url = "/程式"
+        weight = 4
+        identifier = '程式'
+
+    [[menu.main]]
+        name = "最新"
+        url = "/最新"
+        weight = 5
+        identifier = '最新'
 
     [[menu.main]]
         name = "關於作者"
-        url = "/_author/"
+        url = "/作者/"
         weight = 99
-        identifier = 'author'
+        identifier = '作者'
         # pre = "<i class='fa fa-heart'></i>&nbsp;"
 
 # Markup configure section
