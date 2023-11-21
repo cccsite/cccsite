@@ -4,5 +4,5 @@ draft: false
 weight: 10
 ---
 
-* [程式人雜誌](programmer/)
-* [成人式雜誌](adult/)
+* [程式人雜誌](程式人雜誌/)
+

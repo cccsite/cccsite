@@ -57,6 +57,7 @@ disablePathToLower = true
 
     # path name excluded from documentation menu
     menu_exclusion = [
+        "_bak",
         "作者",
         "雜誌",
         "入口",
@@ -75,10 +76,10 @@ disablePathToLower = true
 [menu]
 
     [[menu.main]]
-        name = "雜誌"
-        url = "/雜誌"
+        name = "程式人雜誌"
+        url = "/雜誌/程式人雜誌"
         weight = 1
-        identifier = '雜誌'
+        identifier = '程式人雜誌'
         # pre = "<i class='fa fa-heart'></i>&nbsp;"
 
     [[menu.main]]
@@ -94,10 +95,10 @@ disablePathToLower = true
         identifier = '程式'
 
     [[menu.main]]
-        name = "最新"
-        url = "/最新"
+        name = "想法"
+        url = "/想法"
         weight = 5
-        identifier = '最新'
+        identifier = '想法'
 
     [[menu.main]]
         name = "關於作者"

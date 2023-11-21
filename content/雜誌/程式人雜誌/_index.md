@@ -1,11 +1,4 @@
----
-title: 程式人雜誌
-linktitle: 程式人雜誌
-menu:
-  main:
-    parent: 雜誌
-weight: 10
----
+# 程式人雜誌
 
 ## 舊版雜誌
 

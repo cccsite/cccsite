@@ -2,7 +2,8 @@
 
 主題  | 內容
 ------|----------------
-[履歷](https://www.cakeresume.com/f5611f) | [金門大學](http://www.nqu.edu.tw/) / [資訊工程系](http://www.nqu.edu.tw/educsie/index.php) / [助理教授](http://www.nqu.edu.tw/educsie/index.php?act=blog&code=list&ids=4) 
+[陳鍾誠](http://www.nqu.edu.tw/educsie/index.php?act=blog&code=list&ids=4)  |[Github](https://github.com/ccckmit) / [Gitlab](https://gitlab.com/ccckmit) / [Facebook](https://www.facebook.com/ccckmit) / [YouTube](https://www.youtube.com/user/ccckmit) / [Wikidot](http://ccckmit.wikidot.com/) / [Medium](https://ccckmit.medium.com/) / [Gmail](mailto://ccckmit@gmail.com) / [Twitter](https://twitter.com/ccckmit) / [Speakerdeck](https://speakerdeck.com/ccckmit)
+[履歷](https://www.cakeresume.com/f5611f) | [金門大學](http://www.nqu.edu.tw/) / [資訊工程系](http://www.nqu.edu.tw/educsie/index.php) / [助理教授](http://www.nqu.edu.tw/educsie/index.php?act=blog&code=list&ids=4)
 [課程](./課程/) | [網頁設計](./課程/網頁設計/README) / [網站設計進階](./課程/網站設計/README) / [計算機結構](./課程/計算機結構/README) / [系統程式](./課程/系統程式/README) / [軟體工程與演算法](./課程/軟體工程與演算法/README) / [人工智慧](./課程/人工智慧/README)
 [書籍](./書籍/) | [nand2tetris](./書籍/nand2tetris/) / [機率統計](./書籍/機率統計/) / [科學計算](./書籍/科學計算/) / [微積分](./書籍/微積分/) / [C# 程式設計](./書籍/C＃程式設計/)
 [技能](./技能/) | [git](./技能/git) / [markdown](./技能/markdown) / [Shell](./技能/shell) / [Linux](./技能/linux)
