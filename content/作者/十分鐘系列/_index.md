@@ -1,4 +1,12 @@
-# 十分鐘系列
+---
+title: 十分鐘系列
+linktitle: 十分鐘系列
+menu:
+  main:
+    parent: 其他作品
+weight: 19
+---
+
 
 ## 程式語言
 

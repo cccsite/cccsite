@@ -1,4 +1,12 @@
-# 書籍
+---
+title: 書籍教材
+linktitle: 書籍教材
+menu:
+  main:
+    parent: 其他作品
+weight: 9
+---
+
 
 * [電腦：從硬體到軟體](cpu2os)
 * [用 Python 學習資訊科學](py2cs)

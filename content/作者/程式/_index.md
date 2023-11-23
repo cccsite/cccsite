@@ -1,16 +1,11 @@
-# 程式
-
-## 陳鍾誠的專案
-
-專案             | 說明
------------------|----------------------------------
-[mini-riscv-os]  | 嵌入式作業系統教學範例
-[script1]  | Script1 程式語言，可以轉換成 JS/Python/Dart 執行
-
-[mini-riscv-os]:https://github.com/cccriscv/mini-riscv-os
-[script1]:https://github.com/script-one/script1
-
-## 喜歡的專案
+---
+title: 程式專案
+linktitle: 程式專案
+menu:
+  main:
+    parent: 其他作品
+weight: 13
+---
 
 專案         | 作者      | 說明
 -------------|----------|----------------------------------
@@ -22,14 +17,19 @@
 [rubi]     | [Jserv] | 語法像 Ruby 的 JIT 立即編譯器
 [minilisp]     | [Rui314] | Lisp 解譯器 (包含垃圾蒐集機制)
 [xv6-riscv]     | [MIT-pdos] | UNIXv6 移植到 RISC-V 處理器
+[mini-riscv-os]  | [陳鍾誠] | 嵌入式作業系統教學範例
+[script1]  | [陳鍾誠] | Script1 程式語言，可以轉換成 JS/Python/Dart 執行
 
 
+[陳鍾誠]:https://github.com/ccckmit/
 [Karpathy]:https://github.com/karpathy/
 [Jserv]:https://github.com/jserv/
 [Rui314]:https://github.com/rui314/
 [MIT-pdos]:https://github.com/mit-pdos/
 [Rswier]:https://github.com/rswier/
 
+[mini-riscv-os]:https://github.com/cccriscv/mini-riscv-os
+[script1]:https://github.com/script-one/script1
 [micrograd]:https://github.com/karpathy/micrograd
 [minGPT]:https://github.com/karpathy/minGPT
 [c4]:https://github.com/rswier/c4

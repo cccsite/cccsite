@@ -83,28 +83,10 @@ disablePathToLower = true
         # pre = "<i class='fa fa-heart'></i>&nbsp;"
 
     [[menu.main]]
-        name = "書籍"
-        url = "/書籍"
-        weight = 3
-        identifier = '書籍'
-
-    [[menu.main]]
-        name = "程式"
-        url = "/程式"
-        weight = 4
-        identifier = '程式'
-
-    [[menu.main]]
-        name = "想法"
-        url = "/想法"
-        weight = 5
-        identifier = '想法'
-
-    [[menu.main]]
-        name = "關於作者"
-        url = "/作者/"
+        name = "其他作品"
+        url = "/作者"
         weight = 99
-        identifier = '作者'
+        identifier = '其他作品'
         # pre = "<i class='fa fa-heart'></i>&nbsp;"
 
 # Markup configure section
