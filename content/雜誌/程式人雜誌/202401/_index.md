@@ -1,6 +1,6 @@
 ---
 title: 程式人雜誌 -- 2024年1月
-linktitle: 程式人雜誌 -- 2024年1月
+linktitle: 2024年1月
 menu:
   main:
     parent: 程式人雜誌
