@@ -26,11 +26,11 @@ sample 函數的原型是 `sample(x, size, replace = FALSE, prob = NULL)`，如�
 
 | 機率模型 | 密度函數 | R 函數名稱 | 說明 |
 |----------|----------|------------|------|
-| 二項分布 | $${n \choose x} p^x (1-p)^{n-x}$$ | binom(n:size, p:prob) | n:樣本數, p:正面機率, <br/> n 次試驗中有 x 個成功的機率 |
-| 布瓦松分布   | $$\frac{e^{-\lambda} {\lambda}^x}{x!}$$ | pois(lambda) | 在每單位區域內，事件出現平均 $$\lambda$$ 次 |
-| 均勻分布 (Uniform) | $$\frac{1}{b-a}$$ | unif(a:min, b:max) | a:範圍下限, b: 上限 <br/> 出現機會均等 |
-| 常態分布(Normal) | $$\frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{1}{2} [(x-\mu)/\sigma]^2}$$ | norm(mean, sd) | 中央極限定理：x1+x2+...+xk; 當 k 越大就越接近常態分布 | 
-| 指數分布  (Exponential)| $$\frac{1}{b} e^{-x/b}$$ | exp(rate) | 伽瑪分布($$a=1, b=\frac{1}{\lambda}$$) <br/> 布瓦松過程中，第一次事件出現的時間 W |
+| 二項分布 | ${n \choose x} p^x (1-p)^{n-x}$ | binom(n:size, p:prob) | n:樣本數, p:正面機率, <br/> n 次試驗中有 x 個成功的機率 |
+| 布瓦松分布   | $\frac{e^{-\lambda} {\lambda}^x}{x!}$ | pois(lambda) | 在每單位區域內，事件出現平均 $\lambda$ 次 |
+| 均勻分布 (Uniform) | $\frac{1}{b-a}$ | unif(a:min, b:max) | a:範圍下限, b: 上限 <br/> 出現機會均等 |
+| 常態分布(Normal) | $\frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{1}{2} [(x-\mu)/\sigma]^2}$ | norm(mean, sd) | 中央極限定理：x1+x2+...+xk; 當 k 越大就越接近常態分布 | 
+| 指數分布  (Exponential)| $\frac{1}{b} e^{-x/b}$ | exp(rate) | 伽瑪分布($a=1, b=\frac{1}{\lambda}$) <br/> 布瓦松過程中，第一次事件出現的時間 W |
 
 對於每個機率模型，您只要在該函數前若加入 r 這個字，就可以用來產生隨機樣本，以下是一些隨機樣本的產生範例。
 
@@ -100,16 +100,16 @@ sample 函數的原型是 `sample(x, size, replace = FALSE, prob = NULL)`，如�
 
 | 中文名稱       | 英文名稱                  | 數學公式 / 說明                                                                                                   |
 |----------------|---------------------------|-------------------------------------------------------------------------------------------------------------------|
-| 樣本平均數     | Mean                      | $$\bar{X} = \frac{\sum_{i=1}^n X_i}{n}$$                                                                            |
+| 樣本平均數     | Mean                      | $\bar{X} = \frac{\sum_{i=1}^n X_i}{n}$                                                                            |
 | 樣本中位數     | Median                    | 樣本排序後最中間位置的數值                                                                                        |
-| 樣本變異數     | Sample Variance           | $$S^2 = \sum_{i=1}^n \frac{(X_i - \bar{X})^2}{n-1} = \frac{n \sum_{i=1}^n X_i^2 - (\sum_{i=1}^n Xi)^2}{n (n-1)}$$   |
-| 樣本標準差     | Sample Standard Deviation | 樣本變異數中的 S 稱為樣本標準差，也就是 $$\sqrt{S^2}$$                                                              |
-| 樣本全距       | Range                     | 樣本中最大的觀察值減去最小的觀察值 $$\omega = X_H-X_L$$                                                             |
+| 樣本變異數     | Sample Variance           | $S^2 = \sum_{i=1}^n \frac{(X_i - \bar{X})^2}{n-1} = \frac{n \sum_{i=1}^n X_i^2 - (\sum_{i=1}^n Xi)^2}{n (n-1)}$   |
+| 樣本標準差     | Sample Standard Deviation | 樣本變異數中的 S 稱為樣本標準差，也就是 $\sqrt{S^2}$                                                              |
+| 樣本全距       | Range                     | 樣本中最大的觀察值減去最小的觀察值 $\omega = X_H-X_L$                                                             |
 | 離群值         | Outlier 或 Wild           | 離其他樣本很遠，特別大或特別小的樣本值                                                                            |
-| 樣本四分數間距 | InterQuartile Range, IQR  | 第 3 四分位數減掉第 1 四分位數 $$IQR = q_3 - q_1$$                                                                  |
+| 樣本四分數間距 | InterQuartile Range, IQR  | 第 3 四分位數減掉第 1 四分位數 $IQR = q_3 - q_1$                                                                  |
 
 
-> 注意：變異數的定義為 $$\delta^2 = E[(X-\mu)^2]$$，上述的樣本變異數必須除以 n-1 才是變異數的不偏估計量，而不是除以 n (這是因為我們並不知道母體真正的 $$\mu$$ 值是多少，因此採用了 $$X-\bar{X}$$ 來代替 $$X-\mu$$ ，但是這樣就會造成多減掉
+> 注意：變異數的定義為 $\delta^2 = E[(X-\mu)^2]$，上述的樣本變異數必須除以 n-1 才是變異數的不偏估計量，而不是除以 n (這是因為我們並不知道母體真正的 $\mu$ 值是多少，因此採用了 $X-\bar{X}$ 來代替 $X-\mu$ ，但是這樣就會造成多減掉
 一份樣本的效應，於是分母就必須除以 n-1 了)。
 
 
@@ -132,11 +132,11 @@ sample 函數的原型是 `sample(x, size, replace = FALSE, prob = NULL)`，如�
 
 2. 樣本變異數 (Sample Variance)
 
-> $$var(x) = \frac{(7-5.9)^2+(4-5.9)^2+(6-5.9)^2+(8-5.9)^2+(9-5.9)^2+(4-5.9)^2+(5-5.9)^2+(6-5.9)^2+(2-5.9)^2+(8-5.9)^2}{10-1} = 4.77$$
+> $var(x) = \frac{(7-5.9)^2+(4-5.9)^2+(6-5.9)^2+(8-5.9)^2+(9-5.9)^2+(4-5.9)^2+(5-5.9)^2+(6-5.9)^2+(2-5.9)^2+(8-5.9)^2}{10-1} = 4.77$
 
 3. 樣本標準差 (Sample Standard Deviation)
 
-> $$S = sqrt(var(x)) = sqrt(4.77)$$
+> $S = sqrt(var(x)) = sqrt(4.77)$
 
 4. 中位數 (Median)
 
@@ -342,8 +342,8 @@ R 操作範例 : 統計圖
 
 中文名稱      英文名稱         R 指令                     數學公式 / 說明
 ------------  ---------------  ----------------           -----------------------------------------------------
-共變異數      covariance       cov(x,y)                   $$\gamma_{XY} =E[ (X-E[X])\,(Y-E[Y])]$$
-相關係數      correlation      cor(x,y)                   $$\phi_{XY}  =E[ (X-E[X])(Y-E[Y])]/(\sigma_X \sigma_Y)$$
+共變異數      covariance       cov(x,y)                   $\gamma_{XY} =E[ (X-E[X])\,(Y-E[Y])]$
+相關係數      correlation      cor(x,y)                   $\phi_{XY}  =E[ (X-E[X])(Y-E[Y])]/(\sigma_X \sigma_Y)$
 
 
 讓我們看看 R 軟體中的共變異數函數 cov() 與相關係數 cor() 的操作，如下所示：

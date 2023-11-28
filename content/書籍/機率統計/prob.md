@@ -16,11 +16,11 @@
 
 詮釋 1. 個人方式：(Personal Approach) : 完全按照個人直覺的解釋方式 (不客觀)。
 
-詮釋 2. 相對頻率方式 (Relative Frequency Approach) ： $$P[A] = \frac{f}{n}$$
+詮釋 2. 相對頻率方式 (Relative Frequency Approach) ： $P[A] = \frac{f}{n}$
 
 * 說明：f 為實驗中事件 A 出現的次數，n 為實驗進行的次數。 此方法乃是基於實驗觀察的結果的方式。
 
-詮釋 3. 古典方式 (Classical Approach) ： $$P[A] = \frac{n(A)}{n(S)}$$
+詮釋 3. 古典方式 (Classical Approach) ： $P[A] = \frac{n(A)}{n(S)}$
 
 * 說明： n(A) 為事件 A 可能出現的次數 N(S) 為實驗可能進行的次數。此方法乃是將將實驗的可能出像 (outcome) 假設為等可能發生 (equaly likely)。
 
@@ -32,21 +32,21 @@
 
 以下三條法則是機率的基本公理：(初等機率測度)
 
-> 公理 (1). $$P(S) = 1$$
+> 公理 (1). $P(S) = 1$
 > 
-> 公理 (2). $$P(A) \ge 0$$
+> 公理 (2). $P(A) \ge 0$
 > 
-> 公理 (3). $$P(A1 \cup A2) = P(A1) + P(A2) \; ; \; if \; A1 \cap A2 = \emptyset$$
+> 公理 (3). $P(A1 \cup A2) = P(A1) + P(A2) \; ; \; if \; A1 \cap A2 = \emptyset$
 
 公理 (1) 中的 S 代表機率的樣本空間，也就是所有可能發生的事件所形成的集合，這個集合的發生機率為 1，意義是沒有任何事件落在樣本空間之外。
 
-公理 (2) 中的 A 代表任一事件，而 $$P(A) \ge 0$$  則代表任何事件的發生機率必須是正的，沒有負的機率值。
+公理 (2) 中的 A 代表任一事件，而 $P(A) \ge 0$  則代表任何事件的發生機率必須是正的，沒有負的機率值。
 
-公理 (3) 中的 A1, A2 代表任兩個事件，如果 A1 與 A2 沒有交集，那麼其聯集發生的機率將會是其機率的總和，也就是 $$P(A1 \cup A2) = P(A1) + P(A2)$$ 。
+公理 (3) 中的 A1, A2 代表任兩個事件，如果 A1 與 A2 沒有交集，那麼其聯集發生的機率將會是其機率的總和，也就是 $P(A1 \cup A2) = P(A1) + P(A2)$ 。
 
 以上機率公理稱為《初等機率測度》公理，但 Kolmogorov 後來又提出了 《Kolmogorov 機率測度》公理系統，將上述的第三條公理改為如下版本：
 
-> 第三公理：任意兩兩不相交事件 $$E_1, E_2, ...$$ 的可數序列滿足 $$P(E_1 \cup E_2 \cup \cdots) = \sum P(E_i)$$ 。即，不相交子集的並的事件集合的機率為那些子集的機率的和。這也被稱為是σ可加性。如果存在子集間的重疊，這一關係不成立。
+> 第三公理：任意兩兩不相交事件 $E_1, E_2, ...$ 的可數序列滿足 $P(E_1 \cup E_2 \cup \cdots) = \sum P(E_i)$ 。即，不相交子集的並的事件集合的機率為那些子集的機率的和。這也被稱為是σ可加性。如果存在子集間的重疊，這一關係不成立。
 
 這兩個公理系統之間，雖然看來差不多，但《Kolmogorov 機率測度》的涵蓋性較好，可以適用在一些《初等機率測度》所無法適用的領域，因此現在的機率教科書上大多是採用《Kolmogorov 機率測度》的公理系統。
 
@@ -58,11 +58,11 @@
 
 當公理系統確定下來之後，我們就可以透過這些法則進行一些基本的推論，舉例而言，我們應該可以很容易的證明以下這些定理。
 
-> 定理 1. $$P(\emptyset) = 0$$
+> 定理 1. $P(\emptyset) = 0$
 > 
-> 定理 2. $$P(A') = 1-P(A)$$
+> 定理 2. $P(A') = 1-P(A)$
 > 
-> 定理 3. $$P(A1 \cup A2) = P(A1) + P(A2) - P(A1 \cap A2)$$
+> 定理 3. $P(A1 \cup A2) = P(A1) + P(A2) - P(A1 \cap A2)$
 
 但是，這些定理又代表甚麼意義呢？其實從下列凡氏圖上可以很清楚的看得出來這些定理的直覺意義。
 
@@ -76,53 +76,53 @@
 
 習題 1 : 
 
-> 定理：證明 $$P(\emptyset) = 0$$ 
+> 定理：證明 $P(\emptyset) = 0$ 
 > 
 > 證明：
 > 
-> $$P(S\cup\emptyset) = P(S)+P(\emptyset)$$ ; 根據公理 (3)
+> $P(S\cup\emptyset) = P(S)+P(\emptyset)$ ; 根據公理 (3)
 > 
-> $$S = S\cup\emptyset$$ ; 根據集合論
+> $S = S\cup\emptyset$ ; 根據集合論
 > 
-> $$P(S) = 1$$ ; 根據公理 1
+> $P(S) = 1$ ; 根據公理 1
 > 
-> $$1 = P(S) = P(S\cup\emptyset) = P(S)+P(\emptyset)$$ ; 根據集合論與公理 (3)
+> $1 = P(S) = P(S\cup\emptyset) = P(S)+P(\emptyset)$ ; 根據集合論與公理 (3)
 > 
-> 所以 $$P(\emptyset) = 1-P(S) = 1-1 = 0$$
+> 所以 $P(\emptyset) = 1-P(S) = 1-1 = 0$
 
 習題 2 : 
 
-> 定理：證明 P(A') = 1-P(A) ; 其中的 A' 代表 A 的補集，也就是 $$A\cup A' = S ; A\cap A' = \emptyset$$
+> 定理：證明 P(A') = 1-P(A) ; 其中的 A' 代表 A 的補集，也就是 $A\cup A' = S ; A\cap A' = \emptyset$
 > 
 > 證明：
 > 
-> 因為 $$A\cup A' = S ; A\cap A' = \emptyset$$ ; 根據 A' 的定義
+> 因為 $A\cup A' = S ; A\cap A' = \emptyset$ ; 根據 A' 的定義
 > 
-> $$P(A' \cup A) = P(A') + P(A)$$ ; 根據公理 3
+> $P(A' \cup A) = P(A') + P(A)$ ; 根據公理 3
 > 
-> $$P(A') + P(A) = P(A' \cup A) = P(S) = 1$$ ; 根據公理 3 與公理1
+> $P(A') + P(A) = P(A' \cup A) = P(S) = 1$ ; 根據公理 3 與公理1
 > 
-> 所以 $$P(A') = 1-P(A)$$
+> 所以 $P(A') = 1-P(A)$
  
 習題 3 : 
 
-> 定理：證明 $$P(A1 \cup A2) = P(A1) + P(A2) - P(A1 \cap A2)$$ 
+> 定理：證明 $P(A1 \cup A2) = P(A1) + P(A2) - P(A1 \cap A2)$ 
 > 
 > 證明：
 > 
-> 因為 $$A1 \cup A2 = (A1-(A1 \cap A2)) \cup A2$$ ; 根據集合論 (用文氏圖可以理解其直覺意義)
+> 因為 $A1 \cup A2 = (A1-(A1 \cap A2)) \cup A2$ ; 根據集合論 (用文氏圖可以理解其直覺意義)
 > 
-> $$(A1-(A1 \cap A2)) \cap A2 =  \emptyset$$  ; 根據集合論 (用文氏圖理解，只是為了方便)
+> $(A1-(A1 \cap A2)) \cap A2 =  \emptyset$  ; 根據集合論 (用文氏圖理解，只是為了方便)
 > 
-> $$P(A1) = P((A1-(A1 \cap A2))\cup (A1 \cap A2) ) = P(A1-(A1 \cap  A2)) + P (A1\cap A2)$$ ; 根據公理 3
+> $P(A1) = P((A1-(A1 \cap A2))\cup (A1 \cap A2) ) = P(A1-(A1 \cap  A2)) + P (A1\cap A2)$ ; 根據公理 3
 > 
-> 所以 $$P(A1-(A1 \cap  A2)) = P(A1) -  P (A1\cap A2)$$
+> 所以 $P(A1-(A1 \cap  A2)) = P(A1) -  P (A1\cap A2)$
 > 
-> 推論 $$P(A1 \cup A2) = P((A1-(A1 \cap  A2)) \cup A2) = P(A1-(A1 \cap  A2)) + P(A2)$$ 
+> 推論 $P(A1 \cup A2) = P((A1-(A1 \cap  A2)) \cup A2) = P(A1-(A1 \cap  A2)) + P(A2)$ 
 > 
-> $$=  P(A1) -  P (A1\cap A2) + P(A2) = P(A1) + P(A2) -  P (A1\cap A2)$$  ;
+> $=  P(A1) -  P (A1\cap A2) + P(A2) = P(A1) + P(A2) -  P (A1\cap A2)$  ;
 > 
-> 所以 $$P(A1 \cup A2)= P(A1) + P(A2) -  P (A1\cap A2)$$
+> 所以 $P(A1 \cup A2)= P(A1) + P(A2) -  P (A1\cap A2)$
 
 ## 機率模型
 
@@ -246,7 +246,7 @@ starting httpd help server ... done
 > 
 > 在 A 事件出現的情況下，B 事件出現的機率，稱為 P(B|A)。
 > 
-> $$P(B|A) = \frac{P(A \cap B)}{P(A)}$$
+> $P(B|A) = \frac{P(A \cap B)}{P(A)}$
 
 範例 1：
 
@@ -268,7 +268,7 @@ starting httpd help server ... done
 > 
 > 事件 A 與 B 彼此獨立，則 A, B 兩事件同時出現的機率為
 > 
-> $$P(A \cap B) = P(A) P(B)$$
+> $P(A \cap B) = P(A) P(B)$
 
 請注意數學中定義的意義，定義代表某種規定，是不需要證明的，只要不符合這種規定的，就不能用此一名詞描述，也就是不符合此定義。
 
@@ -311,11 +311,11 @@ starting httpd help server ... done
 
 習題：請證明以下定理：
 
-> 定理 1. 若 A , B 彼此獨立，則 $$P(A|B) = P(B|A) * \frac{P(A)}{P(B)}$$
+> 定理 1. 若 A , B 彼此獨立，則 $P(A|B) = P(B|A) * \frac{P(A)}{P(B)}$
 > 
-> 定理 2. $$A_1, A_2, ... , A_k$$  彼此獨立 <=> $$P(A_1 \cap A_2 ... \cap A_k) = P(A_1) P(A_2) ... P(A_k)$$
+> 定理 2. $A_1, A_2, ... , A_k$  彼此獨立 <=> $P(A_1 \cap A_2 ... \cap A_k) = P(A_1) P(A_2) ... P(A_k)$
 > 
-> 定理 3. 乘法規則：$$P(A \cap B) = P(B|A) P(A)$$
+> 定理 3. 乘法規則：$P(A \cap B) = P(B|A) P(A)$
 
 習題 : 請舉出一組獨立事件的範例
 
@@ -323,15 +323,15 @@ starting httpd help server ... done
 
 ## 貝氏定理
 
-> *貝氏定理*：$$P(A | B) = P(B | A)  \frac{P(A)}{P(B)}$$
+> *貝氏定理*：$P(A | B) = P(B | A)  \frac{P(A)}{P(B)}$
 > 
 > 證明：
 > 
-> 由條件機率的定義可得 $$P(B | A) = \frac{P(A \cap B)}{P(A)}$$，也可以得到 $$P(A | B) = \frac{P(A \cap B)}{P(B)}$$
+> 由條件機率的定義可得 $P(B | A) = \frac{P(A \cap B)}{P(A)}$，也可以得到 $P(A | B) = \frac{P(A \cap B)}{P(B)}$
 > 
-> 所以  $$P(A \cap B) = P(B|A) P(A) = P(A|B) P(B)$$
+> 所以  $P(A \cap B) = P(B|A) P(A) = P(A|B) P(B)$
 > 
-> 於是得到 $$P(A | B) = P(B | A)  \frac{P(A)}{P(B)}$$
+> 於是得到 $P(A | B) = P(B | A)  \frac{P(A)}{P(B)}$
 
 習題：
 
@@ -346,11 +346,11 @@ starting httpd help server ... done
 > 
 > 假如 A 與 B 在給定 C 的情況下條件獨立，那麼以下算式成立：
 > 
-> $$P(A,B|C) = P(A|C) * P(B|C)$$ ;
+> $P(A,B|C) = P(A|C) * P(B|C)$ ;
 
 習題：請證明以下定理：
 
-> 定理： $$P(A,B|C) = P(C|A)* P(C|B)*\frac{P(A) P(B)}{P(C)^2}$$
+> 定理： $P(A,B|C) = P(C|A)* P(C|B)*\frac{P(A) P(B)}{P(C)^2}$
 
 
 ## 習題：牙疼的診斷問題

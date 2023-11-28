@@ -12,7 +12,7 @@
 
 伯努利試驗是一項只有兩種可能結果的隨機試驗，可以用下列機率分布描述：
 
-$$P[X=1] = p ; P[X=0] = 1-p$$
+$P[X=1] = p ; P[X=0] = 1-p$
 
 換句話說、伯努力試驗是一種 YES or NO (1 or 0) 的試驗。舉例而言，像是「丟銅版、生男生女、一地區某天最高溫是否超過 30 度、擲骰子是否超過 2 點」等等，都可以用伯努力實驗描述。
 
@@ -52,9 +52,9 @@ $$P[X=1] = p ; P[X=0] = 1-p$$
 
 令 X 代表一個可以將 (t1 t2 ... tn) 映射到伯努力試驗成功 (Yes) 次數的函數，那麼、n 次實驗中出現 k 次 1 的機會，可以用以下算式表示。
 
-$$P(X=k) =  {n \choose k} p^k (1-p)^{n-k}$$ 
+$P(X=k) =  {n \choose k} p^k (1-p)^{n-k}$ 
 
-舉例而言，投擲公正銅板 5 次，得到 3 次正面的機率為 $$P(X=3) = {5 \choose 3} p^3 (1-p)^{5-3}$$ ，其中 p=0.5。
+舉例而言，投擲公正銅板 5 次，得到 3 次正面的機率為 $P(X=3) = {5 \choose 3} p^3 (1-p)^{5-3}$ ，其中 p=0.5。
 
 範例：
 
@@ -64,7 +64,7 @@ $$P(X=k) =  {n \choose k} p^k (1-p)^{n-k}$$
 > 
 > 用機率描述生男生女這件事， X({生男})=1, X({生女})=0, 那麼可以計算至少生一個男生的機率如下：
 > 
-> $$P(X>=1) = P(X={2,3}) = \sum_{k \in \{2,3\}} {3 \choose k} p^k (1-p)^{n-k}$$ ，其中 p = 0.53, (1-p) = 0.47。 
+> $P(X>=1) = P(X={2,3}) = \sum_{k \in \{2,3\}} {3 \choose k} p^k (1-p)^{n-k}$ ，其中 p = 0.53, (1-p) = 0.47。 
 
 讓我們用 R 軟體計算一下
 
@@ -112,9 +112,9 @@ $$P(X=k) =  {n \choose k} p^k (1-p)^{n-k}$$
 
 關於這種「直到成功才停止」的問題，可以用幾何分布來描述，以下是幾何分布的定義。
 
-$$P(X=k) = (1-p)^{k-1} p = q^{k-1} p$$
+$P(X=k) = (1-p)^{k-1} p = q^{k-1} p$
 
-舉例而言，假如我們連續投擲公正銅版，直到出現正面才停止，那麼我們需要投擲 k 次才會得到第一個正面的機率，就會是 $$(1-p)^{k-1} p$$ ，其中的 p=0.5。
+舉例而言，假如我們連續投擲公正銅版，直到出現正面才停止，那麼我們需要投擲 k 次才會得到第一個正面的機率，就會是 $(1-p)^{k-1} p$ ，其中的 p=0.5。
 
 範例：
 
@@ -124,11 +124,11 @@ $$P(X=k) = (1-p)^{k-1} p = q^{k-1} p$$
 > 
 > 用機率描述生男生女這件事， X({生女})=1, X({生男})=0, 那麼就可以累加下列算式以計算結果。
 > 
-> $$\sum_{k=1}^{3} P(X=k) = \sum_{k=1}^{3} (1-p)^{k-1} p = \sum_{k=1}^{3} (1-0.47)^{k-1} 0.47$$ 
+> $\sum_{k=1}^{3} P(X=k) = \sum_{k=1}^{3} (1-p)^{k-1} p = \sum_{k=1}^{3} (1-0.47)^{k-1} 0.47$ 
 
-讓我們用 R 軟體計算一下，必須注意的是，R 軟體中的幾何分布 dgeom 的定義為 $$p(x) = p (1-p)^x$$ ，也就是用失敗次數當 x，因此其公式與上面的有所不同，必須修改如下：(其中的 x 代表失敗次數)。
+讓我們用 R 軟體計算一下，必須注意的是，R 軟體中的幾何分布 dgeom 的定義為 $p(x) = p (1-p)^x$ ，也就是用失敗次數當 x，因此其公式與上面的有所不同，必須修改如下：(其中的 x 代表失敗次數)。
 
-$$P(X=x) = (1-p)^{x} p = q^{x} p$$
+$P(X=x) = (1-p)^{x} p = q^{x} p$
 
 ```R
 > dgeom(0, 0.47) # 0 次失敗，第 1 次就成功。
@@ -151,13 +151,13 @@ $$P(X=x) = (1-p)^{x} p = q^{x} p$$
 
 這樣的機率分布就稱為負二項分布，其公式如下：
 
-$$P(X=k) = {k-1 \choose r-1} (1-p)^{k-r} p^r$$
+$P(X=k) = {k-1 \choose r-1} (1-p)^{k-r} p^r$
 
-舉例而言，假如我們連續投擲公正銅版，直到出現三次正面才停止，那麼我們需要投擲 k 次才會得到第一個正面的機率，就會是 $${k-1 \choose r-1} (1-p)^{k-r} p^r$$，其中的 p=0.5。
+舉例而言，假如我們連續投擲公正銅版，直到出現三次正面才停止，那麼我們需要投擲 k 次才會得到第一個正面的機率，就會是 ${k-1 \choose r-1} (1-p)^{k-r} p^r$，其中的 p=0.5。
 
-讓我們用 R 軟體計算一下，必須注意的是，R 軟體中的負二項分布 dbinom 的定義為 $$\Gamma(x+n)/(\Gamma(n) x!) p^n (1-p)^x$$ ，也就是用 n=r, x=k-r-1 的代換方式。
+讓我們用 R 軟體計算一下，必須注意的是，R 軟體中的負二項分布 dbinom 的定義為 $\Gamma(x+n)/(\Gamma(n) x!) p^n (1-p)^x$ ，也就是用 n=r, x=k-r-1 的代換方式。
 
-其中的 x 同樣代表失敗次數，而 n 代表成功次數，Γ(n) 代表排列數，所以 Γ(x+n)/(Γ(n) x!) 其實也就是 (x+n-1)!/((n-1)! x!) ，也就是 $${x+n-1 \choose x}$$ 的意思。
+其中的 x 同樣代表失敗次數，而 n 代表成功次數，Γ(n) 代表排列數，所以 Γ(x+n)/(Γ(n) x!) 其實也就是 (x+n-1)!/((n-1)! x!) ，也就是 ${x+n-1 \choose x}$ 的意思。
 
 R 的操作範例
 
@@ -188,11 +188,11 @@ R 的操作範例
 > 
 > 用機率描述生男生女這件事， X({生女})=1, X({生男})=0, 那麼就可以累加下列算式以計算結果。
 > 
-> $$\sum_{k=1}^{5} P(X=k) = \sum_{k=1}^{5} {k-1 \choose r-1} (1-p)^{k-r} p^r$$ , 其中 p=0.47, r=3。
+> $\sum_{k=1}^{5} P(X=k) = \sum_{k=1}^{5} {k-1 \choose r-1} (1-p)^{k-r} p^r$ , 其中 p=0.47, r=3。
 
 但是由於 R 是用失敗次數，所以必須改成：
 
-> $$\sum_{k=1}^{5} P(X=k) = \sum_{x=0}^{2} {x+n-1 \choose x-1} (1-p)^x p^n$$ , 其中 p=0.47, n=3。
+> $\sum_{k=1}^{5} P(X=k) = \sum_{x=0}^{2} {x+n-1 \choose x-1} (1-p)^x p^n$ , 其中 p=0.47, n=3。
 
 於是操作如下：
 
@@ -231,12 +231,12 @@ R 的操作範例
 
 在離散機率分布當中，布瓦松分布算是相當特別的一個，因為「布瓦松分布」是描述「連續區域內出現幾個樣本」的分布。舉例而言，像是舀一瓢水會撈到的草履蟲數量，或者抽一滴血會抽到的白血球數量等等。
 
-布瓦松分布的公式如下所示，其中的 $$\lambda$$ 代表每單位區域內會出現的樣本平均數。
+布瓦松分布的公式如下所示，其中的 $\lambda$ 代表每單位區域內會出現的樣本平均數。
 
-$$P(X=k) = \lambda^k e^{-\lambda}/k!$$
+$P(X=k) = \lambda^k e^{-\lambda}/k!$
 
 
-要瞭解布瓦松分布，得從二項分布的極限開始想起，以下是三種不同 $$\lambda$$ 參數的布瓦松分布圖：
+要瞭解布瓦松分布，得從二項分布的極限開始想起，以下是三種不同 $\lambda$ 參數的布瓦松分布圖：
 
 ![圖、布瓦松分布<BR/>來源：<http://en.wikipedia.org/wiki/Poisson_distribution>](PoissonCurve.jpg)
 
@@ -286,23 +286,23 @@ $$P(X=k) = \lambda^k e^{-\lambda}/k!$$
 > 
 > 但是上述的想法有個小問題，那就是該情況代表其它白血球都沒被抽到，因此所謂的 P(w1w3) 真正的意思應該是
 > 
-> $$P(w_1 \bar{w_2} w_3 \bar{w_4} .... \bar{w_n}) = (\frac{1}{1000})^2  (\frac{999}{1000})^{n-2}$$
+> $P(w_1 \bar{w_2} w_3 \bar{w_4} .... \bar{w_n}) = (\frac{1}{1000})^2  (\frac{999}{1000})^{n-2}$
 > 
 > 所以 P(X=3) 應該算法如下：
 > 
-> $$P(X=3) = P(\{A| X(A) = 3\}) = (\frac{1}{1000})^3  (\frac{999}{1000})^{n-3}  {n \choose 3}$$
+> $P(X=3) = P(\{A| X(A) = 3\}) = (\frac{1}{1000})^3  (\frac{999}{1000})^{n-3}  {n \choose 3}$
 > 
 > 推而廣之，P(X=k) 的機率之算法如下：
 > 
-> $$P(X=k) = P(\{A| X(A) = k\}) = (\frac{1}{1000})^k  (\frac{999}{1000})^{n-k}  {n \choose k}$$
+> $P(X=k) = P(\{A| X(A) = k\}) = (\frac{1}{1000})^k  (\frac{999}{1000})^{n-k}  {n \choose k}$
 > 
 > 事實上，這個題目的機率分布就是下一章的二項分布，如下所示：
 >
-> $$P(X=k) = {n \choose k} p^k (1-p)^{n-k}$$
+> $P(X=k) = {n \choose k} p^k (1-p)^{n-k}$
 > 
 > 而且、當 n 趨近於無限大時，這個分布將會趨近於布瓦松分布，如下所示：
 > 
-> $$P(X=k) = \lambda^k e^{-\lambda}/k!$$
+> $P(X=k) = \lambda^k e^{-\lambda}/k!$
 > 
 > 其中的 λ 之意義為，在單位時間 (或單位面積、體積) 內，事件的出現次數平均為 λ 次。
 
@@ -312,7 +312,7 @@ $$P(X=k) = \lambda^k e^{-\lambda}/k!$$
 
 解答：
 
-> λ = 10，因此布瓦松分布為 $$p(x) = 10^x e^{-10}/x!$$ ，將 x=8 代入，得到 $$p(8) = 10^8 e^{-10}/8!$$ 
+> λ = 10，因此布瓦松分布為 $p(x) = 10^x e^{-10}/x!$ ，將 x=8 代入，得到 $p(8) = 10^8 e^{-10}/8!$ 
 
 其數值可以用 R 軟體計算，如下所示：
 
@@ -363,19 +363,19 @@ $$P(X=k) = \lambda^k e^{-\lambda}/k!$$
 
 > 根據二項分布的公式
 > 
-> $$P(X=k) = {n \choose k} p^k (1-p)^{n-k}$$
+> $P(X=k) = {n \choose k} p^k (1-p)^{n-k}$
 > 
 > 假如 n 很大，且抽取 1 單位體積內的平均個數為 λ，總體積為 M，則總共的個數 n = M λ，且每個樣本被抽到的機會為 1/M。
 > 
 > 而且、當 n 趨近於無限大，也就是 M 趨近無限大時，上述分布可以改寫如下。
 > 
-> $$\lim_{n\to\infty} P(X=k) = {n \choose k} p^k (1-p)^{n-k} = {M \lambda \choose k} (1/M)^k (1-(1/M))^{M \lambda-k}$$
+> $\lim_{n\to\infty} P(X=k) = {n \choose k} p^k (1-p)^{n-k} = {M \lambda \choose k} (1/M)^k (1-(1/M))^{M \lambda-k}$
 > 
-> 當 k 很小時， $$(1-(1/M))^{M \lambda-k} \sim (1-(1/M))^{M \lambda} = e^{-\lambda}$$ 且 $${M \lambda \choose k} = (M \lambda)*(M \lambda-1)...(M \lambda-k)/k! \sim (M \lambda)^k/k! $$
+> 當 k 很小時， $(1-(1/M))^{M \lambda-k} \sim (1-(1/M))^{M \lambda} = e^{-\lambda}$ 且 ${M \lambda \choose k} = (M \lambda)*(M \lambda-1)...(M \lambda-k)/k! \sim (M \lambda)^k/k! $
 > 
-> 所以可得 $$ {M \lambda \choose k} (1/M)^k (1-(1/M))^{M \lambda-k} \sim (M \lambda)^k/(M^k k!) e^{-\lambda} = \lambda^k e^{-\lambda}/k!$$
+> 所以可得 $ {M \lambda \choose k} (1/M)^k (1-(1/M))^{M \lambda-k} \sim (M \lambda)^k/(M^k k!) e^{-\lambda} = \lambda^k e^{-\lambda}/k!$
 > 
-> 所以可得 $$P(X=k) = \lambda^k e^{-\lambda}/k!$$ 
+> 所以可得 $P(X=k) = \lambda^k e^{-\lambda}/k!$ 
 
 
 ## 均勻分布 (Uniform distribution)
@@ -427,12 +427,12 @@ $$P(X=k) = \lambda^k e^{-\lambda}/k!$$
 
 | 離散機率模型 | 密度函數 | R 函數名稱 | 說明 |
 |--------------|----------|------------|------|
-| 二項分布 | $${n \choose x} p^x (1-p)^{n-x}$$ | binom(n:size, p:prob) | n:樣本數, p:正面機率, <br/> n 次試驗中有 x 個成功的機率 |
-| 多項分布	| $$\frac{n!}{x_1!...x_k!}  p_1^{x_1}...p_k^{x_k}$$ | multinom(n:size, p(1..k):prob) | n:樣本數, p[1..n]:各項的機率  |
-| 負二項分布 | $${x-1 \choose r-1} (1-p)^{x-r} p^r$$ | nbinom(size, prob) | x:樣本數, , p:正面機率, <br/> 要得到第 r 次成功所需要的試驗次數 |
-| 幾何分布	| $$(1-p)^{x-1} p$$ | geom(p:prob) | p: 成功機率, 第一次成功所需要的試驗次數 |
-| 超幾何分布	| $$\frac{{ r \choose x} {N-r \choose n-x}}{N \choose n}$$ | hyper(N:m,n:n,r:k) | m:白球數量, n:黑球數量, k:抽出球數, <br/> 同二項分布，但取樣後不放回 |
-| 布瓦松分布	| $$\frac{e^{-\lambda s} {\lambda s}^x}{x!}$$ | pois(lambda) | k:期望值, $$\lambda = \frac{k}{s}$$, <br/> 在 s 時間內，事件出現平均 k 次 |
+| 二項分布 | ${n \choose x} p^x (1-p)^{n-x}$ | binom(n:size, p:prob) | n:樣本數, p:正面機率, <br/> n 次試驗中有 x 個成功的機率 |
+| 多項分布	| $\frac{n!}{x_1!...x_k!}  p_1^{x_1}...p_k^{x_k}$ | multinom(n:size, p(1..k):prob) | n:樣本數, p[1..n]:各項的機率  |
+| 負二項分布 | ${x-1 \choose r-1} (1-p)^{x-r} p^r$ | nbinom(size, prob) | x:樣本數, , p:正面機率, <br/> 要得到第 r 次成功所需要的試驗次數 |
+| 幾何分布	| $(1-p)^{x-1} p$ | geom(p:prob) | p: 成功機率, 第一次成功所需要的試驗次數 |
+| 超幾何分布	| $\frac{{ r \choose x} {N-r \choose n-x}}{N \choose n}$ | hyper(N:m,n:n,r:k) | m:白球數量, n:黑球數量, k:抽出球數, <br/> 同二項分布，但取樣後不放回 |
+| 布瓦松分布	| $\frac{e^{-\lambda s} {\lambda s}^x}{x!}$ | pois(lambda) | k:期望值, $\lambda = \frac{k}{s}$, <br/> 在 s 時間內，事件出現平均 k 次 |
 
 ## 附件：連續型機率分布表格整理
 
@@ -440,15 +440,15 @@ $$P(X=k) = \lambda^k e^{-\lambda}/k!$$
 
 | 連續機率模型 | 密度函數 | R 函數 | 說明 |
 |--------------|----------|--------|------|
-| 均勻分布 (Uniform) | $$\frac{1}{b-a}$$ | unif(a:min, b:max) | a:範圍下限, b: 上限 <br/> 出現機會均等 |
-| 常態分布(Normal) | $$\frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{1}{2} [(x-\mu)/\sigma]^2}$$ | norm(mean, sd) | 中央極限定理：x1+x2+...+xk; 當 k 越大就越接近常態分布 | 
-| 伽瑪分布 (Gamma) | $$\frac{1}{\Gamma(a) b^{a}} x^{a-1} e^{-x/b}$$ | gamma(shape, rate = 1, scale = 1/rate) |  $$\Gamma(k) = \int_{0}^{\infty} z^{k-1} e^{-z} dz$$ <br/>  指數分布與卡方分布都是 Gamma 分布的特例 |
-| 指數分布	(Exponential)| $$\frac{1}{b} e^{-x/b}$$ | exp(rate) | 伽瑪分布($$a=1, b=\frac{1}{\lambda}$$) <br/> 布瓦松過程中，第一次事件出現的時間 W |
-| 卡方分布 (Chi-Square) |  $$\frac{1}{2^{\gamma/2}\Gamma(\gamma/2)}\,x^{\gamma/2 - 1} e^{-x/2}$$ | chisq(df, ncp) | 伽瑪分布( $$b=2, a=\gamma/2$$ ) <br/> 利用樣本推斷母體變異數 | 
-| 柯西分布 (Cauchy) | $$\frac{1}{\pi} \frac{a}{a^2 + (x-b)^2}$$ | cauchy(b:location, a:scale)  | |
-| 威布爾分布 (Weibull)| $$a b x^{b-1} e^{-a x^{b}}$$ | weibull(a:shape, b:scale) | $$\rho(t)=\frac{f(t)}{R(t)}$$ <br/> 可靠度工程：f(x) 失敗時間, R(t) 可靠度,$$\rho(t)$$ 失敗率 |
-| T 分布 (T)	| $$\frac{Z}{\sqrt{X_{\gamma}^2/\gamma}}$$ | t(df, ncp) | 估計變異數時使用的分布 | 
-| F 分布 (F)	|  $$\frac{ X_{ \gamma_1 }^2 / \gamma_1 }{ X_{ \gamma_2 }^2/ \gamma_2 }$$ |  f(df1, df2, ncp) | 等變異數 F 檢定時使用 | 
+| 均勻分布 (Uniform) | $\frac{1}{b-a}$ | unif(a:min, b:max) | a:範圍下限, b: 上限 <br/> 出現機會均等 |
+| 常態分布(Normal) | $\frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{1}{2} [(x-\mu)/\sigma]^2}$ | norm(mean, sd) | 中央極限定理：x1+x2+...+xk; 當 k 越大就越接近常態分布 | 
+| 伽瑪分布 (Gamma) | $\frac{1}{\Gamma(a) b^{a}} x^{a-1} e^{-x/b}$ | gamma(shape, rate = 1, scale = 1/rate) |  $\Gamma(k) = \int_{0}^{\infty} z^{k-1} e^{-z} dz$ <br/>  指數分布與卡方分布都是 Gamma 分布的特例 |
+| 指數分布	(Exponential)| $\frac{1}{b} e^{-x/b}$ | exp(rate) | 伽瑪分布($a=1, b=\frac{1}{\lambda}$) <br/> 布瓦松過程中，第一次事件出現的時間 W |
+| 卡方分布 (Chi-Square) |  $\frac{1}{2^{\gamma/2}\Gamma(\gamma/2)}\,x^{\gamma/2 - 1} e^{-x/2}$ | chisq(df, ncp) | 伽瑪分布( $b=2, a=\gamma/2$ ) <br/> 利用樣本推斷母體變異數 | 
+| 柯西分布 (Cauchy) | $\frac{1}{\pi} \frac{a}{a^2 + (x-b)^2}$ | cauchy(b:location, a:scale)  | |
+| 威布爾分布 (Weibull)| $a b x^{b-1} e^{-a x^{b}}$ | weibull(a:shape, b:scale) | $\rho(t)=\frac{f(t)}{R(t)}$ <br/> 可靠度工程：f(x) 失敗時間, R(t) 可靠度,$\rho(t)$ 失敗率 |
+| T 分布 (T)	| $\frac{Z}{\sqrt{X_{\gamma}^2/\gamma}}$ | t(df, ncp) | 估計變異數時使用的分布 | 
+| F 分布 (F)	|  $\frac{ X_{ \gamma_1 }^2 / \gamma_1 }{ X_{ \gamma_2 }^2/ \gamma_2 }$ |  f(df1, df2, ncp) | 等變異數 F 檢定時使用 | 
 | 貝塔分布 (Beta) |   | beta(a:shape1, b:shape2, ncp) |  | 
 | 對數常態分布	 (Log Normal) | |  lnorm(meanlog, sdlog) | | 
 | 邏輯分布	| | logis(location, scale)	| |

@@ -4,16 +4,16 @@
 
 | 連續機率模型 | 密度函數 | R 函數 | 說明 |
 |--------------|----------|--------|------|
-| 常態分布(Normal) | $$\frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{1}{2} [(x-\mu)/\sigma]^2}$$ | norm(mean, sd) | 中央極限定理：x1+x2+...+xk; 當 k 越大就越接近常態分布 | 
-| 伽瑪分布 (Gamma) | $$\frac{1}{\Gamma(a) b^{a}} x^{a-1} e^{-x/b}$$ | gamma(shape, rate = 1, scale = 1/rate) |  $$\Gamma(k) = \int_{0}^{\infty} z^{k-1} e^{-z} dz$$ <br/>  指數分布與卡方分布都是 Gamma 分布的特例 |
-| 指數分布	(Exponential)| $$\frac{1}{b} e^{-x/b}$$ | exp(rate) | 伽瑪分布($$a=1, b=\frac{1}{\lambda}$$) <br/> 布瓦松過程中，第一次事件出現的時間 W |
-| 卡方分布 (Chi-Square) |  $$\frac{1}{2^{\gamma/2}\Gamma(\gamma/2)}\,x^{\gamma/2 - 1} e^{-x/2}$$ | chisq(df, ncp) | 伽瑪分布( $$b=2, a=\gamma/2$$ ) <br/> 利用樣本推斷母體變異數 | 
-| 均勻分布 (Uniform) | $$\frac{1}{b-a}$$ | unif(a:min, b:max) | a:範圍下限, b: 上限 <br/> 出現機會均等 |
-| 柯西分布 (Cauchy) | $$\frac{1}{\pi} \frac{a}{a^2 + (x-b)^2}$$ | cauchy(b:location, a:scale)  | |
-| 威布爾分布 (Weibull)| $$a b x^{b-1} e^{-a x^{b}}$$ | weibull(a:shape, b:scale) | $$\rho(t)=\frac{f(t)}{R(t)}$$ <br/> 可靠度工程：f(x) 失敗時間, R(t) 可靠度,$$\rho(t)$$ 失敗率 |
-| T 分布 (T)	| $$\frac{Z}{\sqrt{X_{\gamma}^2/\gamma}}$$ | t(df, ncp) | 估計變異數時使用的分布 | 
-| F 分布 (F)	| $$\frac{X_{\gamma_1}^2 / \gamma_1}{X_{\gamma_2}^2/\gamma_2}$$ |  f(df1, df2, ncp) | 等變異數 F 檢定時使用 | 
-| 貝塔分布 (Beta) | $$f(x)= \frac{Γ(a+b)}{Γ(a) Γ(b)} x^{a-1}(1-x)^{b-1}$$  | beta(a:shape1, b:shape2, ncp) |  | 
+| 常態分布(Normal) | $\frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{1}{2} [(x-\mu)/\sigma]^2}$ | norm(mean, sd) | 中央極限定理：x1+x2+...+xk; 當 k 越大就越接近常態分布 | 
+| 伽瑪分布 (Gamma) | $\frac{1}{\Gamma(a) b^{a}} x^{a-1} e^{-x/b}$ | gamma(shape, rate = 1, scale = 1/rate) |  $\Gamma(k) = \int_{0}^{\infty} z^{k-1} e^{-z} dz$ <br/>  指數分布與卡方分布都是 Gamma 分布的特例 |
+| 指數分布	(Exponential)| $\frac{1}{b} e^{-x/b}$ | exp(rate) | 伽瑪分布($a=1, b=\frac{1}{\lambda}$) <br/> 布瓦松過程中，第一次事件出現的時間 W |
+| 卡方分布 (Chi-Square) |  $\frac{1}{2^{\gamma/2}\Gamma(\gamma/2)}\,x^{\gamma/2 - 1} e^{-x/2}$ | chisq(df, ncp) | 伽瑪分布( $b=2, a=\gamma/2$ ) <br/> 利用樣本推斷母體變異數 | 
+| 均勻分布 (Uniform) | $\frac{1}{b-a}$ | unif(a:min, b:max) | a:範圍下限, b: 上限 <br/> 出現機會均等 |
+| 柯西分布 (Cauchy) | $\frac{1}{\pi} \frac{a}{a^2 + (x-b)^2}$ | cauchy(b:location, a:scale)  | |
+| 威布爾分布 (Weibull)| $a b x^{b-1} e^{-a x^{b}}$ | weibull(a:shape, b:scale) | $\rho(t)=\frac{f(t)}{R(t)}$ <br/> 可靠度工程：f(x) 失敗時間, R(t) 可靠度,$\rho(t)$ 失敗率 |
+| T 分布 (T)	| $\frac{Z}{\sqrt{X_{\gamma}^2/\gamma}}$ | t(df, ncp) | 估計變異數時使用的分布 | 
+| F 分布 (F)	| $\frac{X_{\gamma_1}^2 / \gamma_1}{X_{\gamma_2}^2/\gamma_2}$ |  f(df1, df2, ncp) | 等變異數 F 檢定時使用 | 
+| 貝塔分布 (Beta) | $f(x)= \frac{Γ(a+b)}{Γ(a) Γ(b)} x^{a-1}(1-x)^{b-1}$  | beta(a:shape1, b:shape2, ncp) |  | 
 | 對數常態分布	 (Log Normal) | |  lnorm(meanlog, sdlog) | | 
 | 邏輯分布	| | logis(location, scale)	| |
 | Signrank	| | signrank(n)	| |
@@ -25,7 +25,7 @@
 
 R 函數：[unif(a:min, b:max)](http://sites.stat.psu.edu/~dhunter/R/html/stats/html/Uniform.html)
 
-課本公式：$$f(x) = \frac{1}{b-a}$$
+課本公式：$f(x) = \frac{1}{b-a}$
 
 R 的公式：f(x) = 1/(max-min)
 
@@ -60,21 +60,21 @@ curve(dnorm(x, sd=3), -5, 5, col="green", add=T)
 
 R 函數：[norm(mean, sd)](http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Normal.html)
 
-公式：$$\frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{1}{2} [(x-\mu)/\sigma]^2}$$
+公式：$\frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{1}{2} [(x-\mu)/\sigma]^2}$
 
 R 的公式：f(x) = 1/(√(2 π) σ) e^-((x - μ)^2/(2 σ^2))
 
 重要性：根據中央極限定理，任何 n 個獨立樣本的平均值趨近於常態分布。
 
-中央極限定理： $$x_1+x_2+...+x_n \rightarrow N(\mu, \delta/\sqrt{n})$$
+中央極限定理： $x_1+x_2+...+x_n \rightarrow N(\mu, \delta/\sqrt{n})$
 
 ### 標準差
 
-1 標準差： $$P[-1 \sigma < X-\mu < 1 \sigma] \simeq 0.68$$ .
+1 標準差： $P[-1 \sigma < X-\mu < 1 \sigma] \simeq 0.68$ .
 
-2 標準差： $$P[-2 \sigma < X-\mu < 2 \sigma] \simeq 0.95$$ .
+2 標準差： $P[-2 \sigma < X-\mu < 2 \sigma] \simeq 0.95$ .
 
-3 標準差： $$P[-3 \sigma < X-\mu < 3 \sigma] \simeq 0.997$$ .
+3 標準差： $P[-3 \sigma < X-\mu < 3 \sigma] \simeq 0.997$ .
 
 ```R
 > pnorm(1)-pnorm(-1)
@@ -126,26 +126,26 @@ R 的公式：f(x) = 1/(√(2 π) σ) e^-((x - μ)^2/(2 σ^2))
 
 ## 伽瑪分布 (Gamma distribution)
 
-$$f(x) =  \frac{1}{\Gamma(\alpha) \beta^{\alpha}} x^{\alpha-1} e^{-x/\beta}$$
+$f(x) =  \frac{1}{\Gamma(\alpha) \beta^{\alpha}} x^{\alpha-1} e^{-x/\beta}$
 
-R 的寫法: $$gamma(shape=a, rate=s) =  \frac{1}{\Gamma(a) s^a } x^{a-1} e^{-x/s}$$
+R 的寫法: $gamma(shape=a, rate=s) =  \frac{1}{\Gamma(a) s^a } x^{a-1} e^{-x/s}$
 
 
 Ｒ函數：Gamma(shape, rate) 
 
 * 公式： f(x)= 1/(s^a Gamma(a)) x^(a-1) e^-(x/s)
-* 對應：[$$ shape = a = \alpha; scale = s = \beta  $$]]
+* 對應：[$ shape = a = \alpha; scale = s = \beta  $]]
 * 意義：指數分布與卡方分布都是 Gamma 分布的特例
 * 網址：http://stat.ethz.ch/R-manual/R-patched/library/stats/html/GammaDist.html
 
-Gamma 函數的定義: $$\Gamma(k) = \int_{0}^{\infty} z^{k-1} e^{-z} dz$$
+Gamma 函數的定義: $\Gamma(k) = \int_{0}^{\infty} z^{k-1} e^{-z} dz$
 
 特性:
 
-1. $$E(X) =  \alpha \beta$$
-2. $$Var(X) = \alpha \beta^2$$
+1. $E(X) =  \alpha \beta$
+2. $Var(X) = \alpha \beta^2$
 
-動差生成函數: $$m_x(t) = (1-\beta t)^{-\alpha}$$
+動差生成函數: $m_x(t) = (1-\beta t)^{-\alpha}$
 
 R 程式範例一
 
@@ -170,7 +170,7 @@ pgamma(qgamma(p,shape=2), shape=2)
 
 # even for shape = 0.001 about half the mass is on numbers
 # that cannot be represented accurately (and most of those as zero)
-pgamma(.Machine$$double.xmin, 0.001)
+pgamma(.Machine$double.xmin, 0.001)
 pgamma(5e-324, 0.001)  # on most machines 5e-324 is the smallest
                        # representable non-zero number
 table(rgamma(1e4, 0.001) == 0)/1e4
@@ -189,7 +189,7 @@ table(rgamma(1e4, 0.001) == 0)/1e4
 > 
 > # even for shape = 0.001 about half the mass is on numbers
 > # that cannot be represented accurately (and most of those as zero)
-> pgamma(.Machine$$double.xmin, 0.001)
+> pgamma(.Machine$double.xmin, 0.001)
 [1] 0.4927171
 > pgamma(5e-324, 0.001)  # on most machines 5e-324 is the smallest
 [1] 0.4752741
@@ -207,20 +207,20 @@ table(rgamma(1e4, 0.001) == 0)/1e4
 
 ## 指數分布 (Exponential Distribution)
 
-$$P(X=x) = \frac{1}{\beta} e^{-x/\beta} = \lambda {e}^{- \lambda x}$$
+$P(X=x) = \frac{1}{\beta} e^{-x/\beta} = \lambda {e}^{- \lambda x}$
 
 * 範圍：x=0,…,k （取出 x 個白球）
 * 意義：白球有 m 個，黑球 n 個，取出 k 個球，其中有 x 個白球的機率; (取後不放回)
-* R 函數： [$$ exp(rate)  ;  rate = 1/\beta = \lambda $$]]
+* R 函數： [$ exp(rate)  ;  rate = 1/\beta = \lambda $]]
  * http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Hypergeometric.html
 
 特性
 
-1. $$E(X) =  k (\frac{m}{m+n})$$
-2. $$Var(X) = k (\frac{n}{m+n}) (\frac{m}{m+n}) (\frac{m+n-k}{m+n-1})$$
+1. $E(X) =  k (\frac{m}{m+n})$
+2. $Var(X) = k (\frac{n}{m+n}) (\frac{m}{m+n}) (\frac{m+n-k}{m+n-1})$
 
 
-動差生成函數：$$m_x(t) = (1-\beta t)^-1$$
+動差生成函數：$m_x(t) = (1-\beta t)^-1$
 
 
 R 程式範例一
@@ -249,9 +249,9 @@ R 程式範例二
 
 ## 卡方分布 (Chi-Square distribution)
 
-公式： $$\frac{1}{2^{\gamma/2}\Gamma(\gamma/2)}\,x^{\gamma/2 - 1} e^{-x/2}$$
+公式： $\frac{1}{2^{\gamma/2}\Gamma(\gamma/2)}\,x^{\gamma/2 - 1} e^{-x/2}$
 
-R 的公式： $$chisq(df=n > 0) =  f_n(x) = \frac{1}{(2^{n/2} \Gamma(n/2)} x^{n/2-1} e^{-x/2}$$
+R 的公式： $chisq(df=n > 0) =  f_n(x) = \frac{1}{(2^{n/2} \Gamma(n/2)} x^{n/2-1} e^{-x/2}$
 
 Ｒ函數：chisq(df=n, ncp=λ)
 
@@ -262,7 +262,7 @@ R 的公式： $$chisq(df=n > 0) =  f_n(x) = \frac{1}{(2^{n/2} \Gamma(n/2)} x^{n
 
 卡方分配主要用途是在「利用樣本推斷母體變異數」時使用的。
 
-卡方分配是伽瑪分布的特例，只要將 Gamma 分配中設定 $$b=2, a=\gamma/2$$ 就是卡方分布了。
+卡方分配是伽瑪分布的特例，只要將 Gamma 分配中設定 $b=2, a=\gamma/2$ 就是卡方分布了。
 
 R 程式範例
 
@@ -388,7 +388,7 @@ stopifnot(all.equal(p00, exp(-lam/2)),
 
 ## 柯西分布 (Cauchy Distribution)
 
-公式： $$\frac{1}{\pi} \frac{a}{a^2 + (x-b)^2}$$
+公式： $\frac{1}{\pi} \frac{a}{a^2 + (x-b)^2}$
 
 Ｒ函數：cauchy(location = 0, scale = 1)
 
@@ -411,9 +411,9 @@ curve(dcauchy(x, 5,5), 0, 10)
 
 ## 威布爾分布 (Weibull Distribution)
 
-$$\alpha \beta x^{\beta-1} e^{-\alpha x^{\beta}}$$
+$\alpha \beta x^{\beta-1} e^{-\alpha x^{\beta}}$
 
-* 用途：(可靠度工程) f(x) 失敗時間, R(t) 可靠度, [$$ \rho(t) $$]] 失敗率
+* 用途：(可靠度工程) f(x) 失敗時間, R(t) 可靠度, [$ \rho(t) $]] 失敗率
 
 * Ｒ函數：weibull(a:shape, b:scale)
  * 公式：f(x) = 1 / (π s (1 + ((x-l)/s)^2))
@@ -422,11 +422,11 @@ $$\alpha \beta x^{\beta-1} e^{-\alpha x^{\beta}}$$
 
 ### 特性
 
-* 期望值：$$\alpha^{-1/\beta} \rho(1+\frac{1}{\beta})$$
+* 期望值：$\alpha^{-1/\beta} \rho(1+\frac{1}{\beta})$
 
-* 變異數：$$\alpha^{-2/\beta} \rho(1+\frac{2}{\beta}) - \mu^2$$
+* 變異數：$\alpha^{-2/\beta} \rho(1+\frac{2}{\beta}) - \mu^2$
 
-* 動差生成函數： $$m_x(t) = ??$$
+* 動差生成函數： $m_x(t) = ??$
 
 ### R 程式範例一
 
@@ -444,11 +444,11 @@ curve(dweibull(x, 5, 5), 0, 10)
 
 ## T 分布 (T distribution)
 
-T 分配：Z 為標準常態分布，$$X_\gamma^2$$ 為自由度 $$\gamma$$ 的卡方分布。
+T 分配：Z 為標準常態分布，$X_\gamma^2$ 為自由度 $\gamma$ 的卡方分布。
 
-公式： $$T = \frac{Z}{\sqrt{X_\gamma^2/\gamma}}$$
+公式： $T = \frac{Z}{\sqrt{X_\gamma^2/\gamma}}$
 
-T 分布公式： $$f(t) = \frac{\Gamma{(\gamma+1)}/2}{\Gamma(\gamma/2) \sqrt{\pi \gamma}} (1+\frac{t^2}{\gamma})^{-(\gamma+1)/2}$$ ; 範圍：$$-\infty < t < \infty$$
+T 分布公式： $f(t) = \frac{\Gamma{(\gamma+1)}/2}{\Gamma(\gamma/2) \sqrt{\pi \gamma}} (1+\frac{t^2}{\gamma})^{-(\gamma+1)/2}$ ; 範圍：$-\infty < t < \infty$
 
 圖形：用 R 程式繪製 T 分布的圖形 (與常態分布 Z 比較)
 
@@ -468,13 +468,13 @@ curve(dt(x, df=2), -5, 5, col="red", add=T)
 
 用途：可用來描述 n 個常態分布樣本平均值的分布。
 
-描述：令 $$X_1, X_2, ..., X_n$$ 為一組來自常態分布 $$N(\mu, \sigma^2)$$ 的隨機樣本，則下列算式服從自由度 n-1 的 T 分布。
+描述：令 $X_1, X_2, ..., X_n$ 為一組來自常態分布 $N(\mu, \sigma^2)$ 的隨機樣本，則下列算式服從自由度 n-1 的 T 分布。
 
-$$\frac{\bar{X} - \mu }{S/\sqrt{n}}$$
+$\frac{\bar{X} - \mu }{S/\sqrt{n}}$
 
-估計：當 $$\sigma$$ 未知時，$$\mu$$ 的 $$100 (1-\alpha \%)$$ 信賴區間如下
+估計：當 $\sigma$ 未知時，$\mu$ 的 $100 (1-\alpha \%)$ 信賴區間如下
 
-$$\bar{x} \pm t_{\alpha/2} (s/\sqrt{n})$$
+$\bar{x} \pm t_{\alpha/2} (s/\sqrt{n})$
 
 R 程式範例一
 
@@ -492,16 +492,16 @@ curve(dt(x, 100), -10, 10)
 
 ## F 分布 (F distribution)
 
-* 卡方分布 $$X_{\gamma 1}^2$$ 與 $$X_{\gamma 2}^2$$ 互相獨立，則下列算式服從 F 分配。
+* 卡方分布 $X_{\gamma 1}^2$ 與 $X_{\gamma 2}^2$ 互相獨立，則下列算式服從 F 分配。
 
-$$\frac{ X_{\gamma 1}^2 / \gamma 1}{ X_{\gamma 2}^2 / \gamma 2}$$
+$\frac{ X_{\gamma 1}^2 / \gamma 1}{ X_{\gamma 2}^2 / \gamma 2}$
 
 Ｒ函數：F(df1 = n1 and df2 = n2)
 
 * 公式：f(x) = Γ((n1 + n2)/2) / (Γ(n1/2) Γ(n2/2)) (n1/n2)^(n1/2) x^(n1/2 - 1) (1 + (n1/n2) x)^-(n1 + n2)/2
 * 網址：http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Fdist.html
 
-特性: 可用來檢定兩組樣本的變異數 [$$ \sigma_1^2 , \sigma_2^2$$]] 是否相等。
+特性: 可用來檢定兩組樣本的變異數 [$ \sigma_1^2 , \sigma_2^2$]] 是否相等。
 
 R 程式範例一
 
@@ -518,12 +518,12 @@ curve(df(x, 10,10), 0, 10)
 
 ## 貝塔分布 (Beta distribution)
 
-公式： $$f(x)= \frac{Γ(a+b)}{Γ(a) Γ(b)} x^{a-1}(1-x)^{b-1}$$
+公式： $f(x)= \frac{Γ(a+b)}{Γ(a) Γ(b)} x^{a-1}(1-x)^{b-1}$
 
 Ｒ函數：beta(a, b) 
 
 * 公式： f(x)= Γ(a+b)/(Γ(a)Γ(b))x^(a-1)(1-x)^(b-1)
-* 對應：[$$ shape1 = a; shape2 = b  $$]]
+* 對應：[$ shape1 = a; shape2 = b  $]]
 * 網址：http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Beta.html
 
 R 程式範例
